@@ -2,8 +2,9 @@
 Kubepilot is a kubectl plugin designed to simplify operations related to ConfigMaps and image vulnerability scanning within Kubernetes clusters.
 
 ### Dependencies
-- kubectl
-- trivy
+- <b>kubectl</b>: https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/
+- <b>trivy</b>: https://aquasecurity.github.io/trivy/v0.18.3/installation/
+
 ### Usage
 ```sh
 Kubectl plugin called kubepilot
