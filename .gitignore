@@ -14,6 +14,7 @@ kubectl-kubepilot_amd64.tar.gz
 *.test
 test.sh
 preDeploy.sh
+cleanup.sh
 
 # Output of the go coverage tool, specifically when used with LiteIDE
 *.out
