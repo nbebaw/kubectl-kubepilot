@@ -12,4 +12,3 @@ Options:
    -l                   : Vulnerabilitie Level
   --version             : Show version information
 </code>
-
