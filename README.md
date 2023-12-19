@@ -1,6 +1,5 @@
 # kubectl-kubepilot
-<code>
-Kubectl plugin called kubepilot
+<code>Kubectl plugin called kubepilot
 Usage:
   kubectl kubepilot [options]
 
