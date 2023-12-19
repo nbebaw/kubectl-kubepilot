@@ -7,9 +7,11 @@
 *.dll
 *.so
 *.dylib
+kubectl-kubepilot
 
 # Test binary, built with `go test -c`
 *.test
+test.sh
 
 # Output of the go coverage tool, specifically when used with LiteIDE
 *.out
