@@ -8,10 +8,12 @@
 *.so
 *.dylib
 kubectl-kubepilot
+kubectl-kubepilot_amd64.tar.gz
 
 # Test binary, built with `go test -c`
 *.test
 test.sh
+preDeploy.sh
 
 # Output of the go coverage tool, specifically when used with LiteIDE
 *.out
