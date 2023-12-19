@@ -1,5 +1,9 @@
 # kubectl-kubepilot
 Kubepilot is a kubectl plugin designed to simplify operations related to ConfigMaps and image vulnerability scanning within Kubernetes clusters.
+
+### Dependencies
+- kubectl
+- trivy
 ### Usage
 ```sh
 Kubectl plugin called kubepilot
@@ -26,5 +30,6 @@ kubectl kubepilot --image-check -l <VulnerabilityLevel> (CRITICAL, HIGH, ...)
 ### Installation
 ```sh
 wget https://github.com/nbebaw/kubectl-kubepilot/releases/download/vAlpha0.1/kubectl-kubepilot
+chmod +x kubectl-kubepilot
 sudo cp kubectl-kubepilot /usr/bin
 ```
