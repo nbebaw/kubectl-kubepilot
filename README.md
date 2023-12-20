@@ -30,7 +30,7 @@ kubectl kubepilot --image-check -l <VulnerabilityLevel> (CRITICAL, HIGH, ...)
 
 ### Installation
 ```sh
-wget https://github.com/nbebaw/kubectl-kubepilot/releases/download/vBeta0.1/kubectl-kubepilot
+wget https://github.com/nbebaw/kubectl-kubepilot/releases/download/v0.0.1/kubectl-kubepilot
 chmod +x kubectl-kubepilot
 sudo cp kubectl-kubepilot /usr/local/bin
 ```
