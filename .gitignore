@@ -24,3 +24,6 @@ cleanup.sh
 
 # Go workspace file
 go.work
+
+# text
+update.txt

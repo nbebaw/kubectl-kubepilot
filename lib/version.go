@@ -2,8 +2,12 @@ package lib
 
 import "fmt"
 
-var version = "vAlpha0.1" // Update this variable with your plugin's version
+var version = "v0.0.1" // Update this variable with your plugin's version
 
+// Print plugin Version
+/*
+ Print plugin Version
+*/
 func PrintVersion() {
 	fmt.Printf("kubectl-kubepilot %s\n", version)
 }

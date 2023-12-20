@@ -7,6 +7,14 @@ import (
 	"os/exec"
 )
 
+// Main configmap function
+/*
+ the function get cm_name, key, namespace as string and execute
+ kubectl with the arguments
+ {cm_name} -> string
+ {key} -> string
+ {namespace} -> string
+*/
 func MainConfigmap(cm_name, key, namespace string) {
 	if cm_name == "" {
 		fmt.Println("Please provide a configmap using -c flag")
@@ -33,6 +41,14 @@ func MainConfigmap(cm_name, key, namespace string) {
 	fmt.Println(value)
 }
 
+// Extract Value From ConfigMap function
+/*
+ the function get the output from the main configmap function
+ and returns the value and error if the function runs in error
+ {output} -> string
+ {key} -> string
+ {cm_name} -> string
+*/
 func extractValueFromConfigMap(output string, key string, cm_name string) (string, error) {
 	var data map[string]interface{}
 

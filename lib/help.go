@@ -4,6 +4,10 @@ import (
 	"fmt"
 )
 
+// Show Help
+/*
+ the function prints help to the user
+*/
 func ShowHelp() {
 	fmt.Println("Usage:")
 	fmt.Println("  kubectl kubepilot [options]")
@@ -15,4 +19,5 @@ func ShowHelp() {
 	fmt.Println("  --image-check 	: Scan images for vulnerabilities")
 	fmt.Println("   -l			: Vulnerabilitie Level")
 	fmt.Println("  --version     	: Show version information")
+	fmt.Println("  --help     		: Show Help")
 }
