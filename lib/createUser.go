@@ -25,8 +25,9 @@ func MainCreateUser(ns, user string) {
 	cert := configView("cluster.certificate-authority-data")
 	serverName := configView("name")
 	token := generateToken(user, ns)
-
+	fmt.Println("======================= Kubeconfig =======================")
 	fmt.Println(generateKubeConfig(cert, serverName, user, ns, token))
+	fmt.Println("======================= End Kubeconfig =======================")
 }
 
 func execWithString(deployment string) {

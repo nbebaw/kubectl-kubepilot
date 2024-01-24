@@ -37,7 +37,7 @@ kubectl kubepilot --create-user  -n <NAMESPACE> -u <USER>
 
 ### Installation
 ```sh
-wget https://github.com/nbebaw/kubectl-kubepilot/releases/download/v0.1.3/kubectl-kubepilot
+wget https://github.com/nbebaw/kubectl-kubepilot/releases/download/v0.1.4/kubectl-kubepilot
 chmod +x kubectl-kubepilot
 sudo cp kubectl-kubepilot /usr/local/bin
 ```
