@@ -16,9 +16,14 @@ Options:
      -c                 : ConfigMap name
      -n                 : Namespace
      -k                 : Key in ConfigMap
+  --create-user         : Create user and user rights for a specific namespace
+     -n                 : Namespace
+     -u                 : Username
+     -ip                : Server IP for the kubeconfig
   --image-check         : Scan images for vulnerabilities
    -l                   : Vulnerabilitie Level
   --version             : Show version information
+  --help                : Show Help
 ```
 ### Example Usage
 ```sh
@@ -30,7 +35,7 @@ kubectl kubepilot --image-check -l <VulnerabilityLevel> (CRITICAL, HIGH, ...)
 
 ### Installation
 ```sh
-wget https://github.com/nbebaw/kubectl-kubepilot/releases/download/v0.0.1/kubectl-kubepilot
+wget https://github.com/nbebaw/kubectl-kubepilot/releases/download/v0.1.0/kubectl-kubepilot
 chmod +x kubectl-kubepilot
 sudo cp kubectl-kubepilot /usr/local/bin
 ```

@@ -2,7 +2,7 @@ package lib
 
 import "fmt"
 
-var version = "v0.0.1" // Update this variable with your plugin's version
+var version = "v0.1.0" // Update this variable with your plugin's version
 
 // Print plugin Version
 /*
