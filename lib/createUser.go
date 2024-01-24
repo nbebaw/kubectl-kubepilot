@@ -119,7 +119,7 @@ func getHostIp() string {
 		fmt.Println("Error getting Host IP:", err)
 		os.Exit(1)
 	}
-	return string(ip)
+	return strings.TrimSpace(string(ip))
 }
 func generateKubeConfig(cert, serverName, user, namespace, token string) string {
 	ip := getHostIp()
