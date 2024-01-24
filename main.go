@@ -8,7 +8,7 @@ import (
 	"github.com/nbebaw/kubectl-kubepilot/lib"
 )
 
-var version = "No Version Provided"
+var Version = "No Version Provided"
 
 func main() {
 	lib.DefineFlags()
@@ -23,7 +23,7 @@ func main() {
 			lib.ShowHelp()
 			os.Exit(1)
 		}
-		fmt.Printf("kubectl-kubepilot v%s\n", version)
+		fmt.Printf("kubectl-kubepilot v%s\n", Version)
 		return
 	}
 
