@@ -8,28 +8,12 @@ import (
 	"github.com/nbebaw/kubectl-kubepilot/lib"
 )
 
+var version = "No Version Provided"
+
 func main() {
-	var showVersion, imageCheck, cm, help, createUser bool
-	var namespace, key, cm_name, level, user, ip string
-
-	// Allowed main options
-	flag.BoolVar(&imageCheck, "image-check", false, "Scan images for vulnerabilities ")
-	flag.BoolVar(&cm, "cm", false, "Configmap")
-	flag.BoolVar(&showVersion, "version", false, "Show version information")
-	flag.BoolVar(&help, "help", false, "Show help")
-	flag.BoolVar(&createUser, "create-user", false, "Create a user in a specific namespace and create kubeconfig")
-
-	// Allowed sub options
-	flag.StringVar(&cm_name, "c", "", "ConfigMap name")
-	flag.StringVar(&namespace, "n", "default", "Namespace")
-	flag.StringVar(&key, "k", "", "Key in ConfigMap")
-	flag.StringVar(&level, "l", "", "Deployment name")
-	flag.StringVar(&user, "u", "", "user")
-	flag.StringVar(&ip, "ip", "", "ip")
-	flag.Parse()
-
+	lib.DefineFlags()
 	// --version
-	if showVersion {
+	if lib.ShowVersion {
 		// Define allowed Flags
 		allowedFlags := map[string]bool{"version": true}
 		// Check the given flags by the user
@@ -39,11 +23,11 @@ func main() {
 			lib.ShowHelp()
 			os.Exit(1)
 		}
-		lib.PrintVersion()
+		fmt.Printf("kubectl-kubepilot v%s\n", version)
 		return
 	}
 
-	if createUser {
+	if lib.CreateUser {
 		// Define allowed Flags
 		allowedFlags := map[string]bool{"create-user": true, "n": true, "u": true, "ip": true}
 		// Check the given flags by the user
@@ -53,12 +37,12 @@ func main() {
 			lib.ShowHelp()
 			os.Exit(1)
 		}
-		lib.MainCreateUser(namespace, user, ip)
+		lib.MainCreateUser(lib.Namespace, lib.User)
 		return
 	}
 
 	// --image-check
-	if imageCheck {
+	if lib.ImageCheck {
 		// Define allowed Flags
 		allowedFlags := map[string]bool{"image-check": true, "l": true}
 		// Check the given flags by the user
@@ -68,12 +52,12 @@ func main() {
 			lib.ShowHelp()
 			os.Exit(1)
 		}
-		lib.MainImageChecks(level)
+		lib.MainImageChecks(lib.Level)
 		return
 	}
 
 	// --cm
-	if cm {
+	if lib.Cm {
 		// Define allowed Flags
 		allowedFlags := map[string]bool{"cm": true, "c": true, "n": true, "k": true}
 		// Check the given flags by the user
@@ -83,12 +67,12 @@ func main() {
 			lib.ShowHelp()
 			os.Exit(1)
 		}
-		lib.MainConfigmap(cm_name, key, namespace)
+		lib.MainConfigmap(lib.Cm_name, lib.Key, lib.Namespace)
 		return
 	}
 
 	// --help
-	if help {
+	if lib.Help {
 		// Define allowed Flags
 		allowedFlags := map[string]bool{"help": true}
 		// Check the given flags by the user

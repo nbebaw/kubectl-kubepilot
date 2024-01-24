@@ -8,7 +8,7 @@
 *.so
 *.dylib
 kubectl-kubepilot
-kubectl-kubepilot_amd64.tar.gz
+kubectl-kubepilot_x86_64.tar.gz
 
 # Test binary, built with `go test -c`
 *.test
@@ -24,6 +24,3 @@ cleanup.sh
 
 # Go workspace file
 go.work
-
-# text
-update.txt

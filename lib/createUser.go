@@ -7,17 +7,13 @@ import (
 	"strings"
 )
 
-func MainCreateUser(ns, user, ip string) {
+func MainCreateUser(ns, user string) {
 	if ns == "" {
 		fmt.Println("Please provide a namespace using -ns flag")
 		os.Exit(1)
 	}
 	if user == "" {
 		fmt.Println("Please provide a username using -u flag")
-		os.Exit(1)
-	}
-	if ip == "" {
-		fmt.Println("Please provide an IP using -ip flag")
 		os.Exit(1)
 	}
 
@@ -30,7 +26,7 @@ func MainCreateUser(ns, user, ip string) {
 	serverName := configView("name")
 	token := generateToken(user, ns)
 
-	fmt.Println(generateKubeConfig(cert, ip, serverName, user, ns, token))
+	fmt.Println(generateKubeConfig(cert, serverName, user, ns, token))
 }
 
 func execWithString(deployment string) {
@@ -116,8 +112,17 @@ roleRef:
 	roleBinding := fmt.Sprintf(roleBindingTemplate, user, namespace, user, namespace, user)
 	return roleBinding
 }
-
-func generateKubeConfig(cert, ip, serverName, user, namespace, token string) string {
+func getHostIp() string {
+	cmd := exec.Command("hostname", "-i")
+	ip, err := cmd.Output()
+	if err != nil {
+		fmt.Println("Error getting Host IP:", err)
+		os.Exit(1)
+	}
+	return string(ip)
+}
+func generateKubeConfig(cert, serverName, user, namespace, token string) string {
+	ip := getHostIp()
 	kubeConfigTemplate := `
 apiVersion: v1
 clusters:

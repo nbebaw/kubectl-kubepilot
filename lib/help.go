@@ -19,7 +19,6 @@ func ShowHelp() {
 	fmt.Println("  --create-user		: Create user and user rights for a specific namespace")
 	fmt.Println("     -n          	: Namespace")
 	fmt.Println("     -u          	: Username")
-	fmt.Println("     -ip          	: Server IP for the kubeconfig")
 	fmt.Println("  --image-check 	: Scan images for vulnerabilities")
 	fmt.Println("   -l			: Vulnerabilitie Level")
 	fmt.Println("  --version     	: Show version information")
